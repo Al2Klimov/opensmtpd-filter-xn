@@ -30,7 +30,7 @@ fn main() -> std::io::Result<()> {
                             token,
                             if mta.contains("xn--") {
                                 writeln!(std_err, "Denying")?;
-                                "reject|550 Forbidden"
+                                "reject|550 Non-ASCII MTA hostname"
                             } else {
                                 writeln!(std_err, "Allowing")?;
                                 "proceed"
